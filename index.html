@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Koleksi Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="#basic-calculator" class="active" data-page="basic">Kalkulator </a></li>
+        <li><a href="#sequence-calculator" data-page="sequence">Kalkulator Baris & Deret</a></li>
+        <li><a href="#geometric-infinite-calculator" data-page="geometric-infinite">Deret Tak Hingga</a></li>
+      </ul>
+    </nav>
+
+    <div id="basic-calculator" class="calculator-page active">
+      <h2>Kalkulator</h2>
+      <div class="calculator">
+        <input type="text" id="basic-display" disabled />
+        <div class="buttons">
+          <button onclick="clearDisplay()">C</button>
+          <button onclick="appendNumber('7')">7</button>
+          <button onclick="appendNumber('8')">8</button>
+          <button onclick="appendNumber('9')">9</button>
+          <button onclick="setOperation('+')">+</button>
+          <button onclick="appendNumber('4')">4</button>
+          <button onclick="appendNumber('5')">5</button>
+          <button onclick="appendNumber('6')">6</button>
+          <button onclick="setOperation('-')">-</button>
+          <button onclick="appendNumber('1')">1</button>
+          <button onclick="appendNumber('2')">2</button>
+          <button onclick="appendNumber('3')">3</button>
+          <button onclick="setOperation('*')">x</button>
+          <button onclick="appendNumber('0')">0</button>
+          <button onclick="appendNumber('.')">.</button>
+          <button onclick="calculate()">=</button>
+          <button onclick="setOperation('/')">/</button>
+          <button onclick="setOperation('^')">^</button>
+          <button onclick="setOperation('√')">√</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="sequence-calculator" class="calculator-page">
+      <h2>Kalkulator Baris & Deret</h2>
+      <div class="sequence-inputs">
+        <div>
+          <label>Suku Pertama (a):</label>
+          <input type="number" id="first-term">
+        </div>
+        <div>
+          <label>Beda/Rasio (b/r):</label>
+          <input type="number" id="common-diff">
+        </div>
+        <div>
+          <label>Jumlah Suku (n):</label>
+          <input type="number" id="num-terms">
+        </div>
+        <div>
+          <button onclick="calculateArithmetic()">Hitung Aritmatika</button>
+          <button onclick="calculateGeometric()">Hitung Geometri</button>
+        </div>
+        <div id="sequence-result" class="result"></div>
+      </div>
+    </div>
+
+    <div id="geometric-infinite-calculator" class="calculator-page">
+      <h2>Deret Tak Hingga</h2>
+      <div class="geometric-inputs">
+        <div>
+          <label>Suku Pertama (a):</label>
+          <input type="number" id="geo-first-term">
+        </div>
+        <div>
+          <label>Rasio (r):</label>
+          <input type="number" id="geo-ratio">
+        </div>
+        <button onclick="calculateInfiniteGeometric()">Hitung Jumlah Tak Hingga</button>
+        <div id="geometric-result" class="result"></div>
+      </div>
+    </div>
+
+    <script type="module" src="/project/main.js"></script>
+  </body>
+</html>
